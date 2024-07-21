@@ -2,6 +2,7 @@ package com.ed06.appdetestekt
 
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -9,6 +10,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.ed06.appdetestekt.databinding.ActivityMainBinding
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,7 +35,9 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
-    fun clique (view: View){
-        println("Hello world!")
+    fun sortear (view: View){
+        val numAleatorio = Random.nextInt(11);
+        val textResultado = findViewById<TextView>(R.id.text_resultado);
+        textResultado.setText("Numero gerado $numAleatorio");
     }
 }
